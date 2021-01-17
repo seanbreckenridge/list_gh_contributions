@@ -20,11 +20,6 @@ The only scopes this requires is `repo`
 
 Put the generated token in a text file on the first line
 
-Example:
-
-```
-python3 -m list_gh_contributions --github_token ./token.txt --to-csv > repos.csv
-```
 
 Usage:
 
@@ -39,20 +34,23 @@ Options:
   --help               Show this message and exit.
 ```
 
----
-
-## Example
+By default, this prints JSON blobs to STDOUT, to export to CSV:
 
 ```
-$ python3 -m list_gh_contributions --github-token ./token.txt --to-csv | head
-"name/owner","url","licenseInfo","updatedAt"
-"seanbreckenridge/mal-id-cache","https://github.com/seanbreckenridge/mal-id-cache","MIT License","2021-01-16T16:51:38Z"
-"seanbreckenridge/exobrain","https://github.com/seanbreckenridge/exobrain","Other","2021-01-15T10:42:04Z"
-"seanbreckenridge/HPI","https://github.com/seanbreckenridge/HPI","MIT License","2021-01-15T10:41:56Z"
-"seanbreckenridge/mint","https://github.com/seanbreckenridge/mint","MIT License","2021-01-14T23:21:27Z"
-"seanbreckenridge/dotfiles","https://github.com/seanbreckenridge/dotfiles","","2021-01-12T03:43:22Z"
-"seanbreckenridge/plaintext-playlist","https://github.com/seanbreckenridge/plaintext-playlist","MIT License","2021-01-07T07:41:29Z"
-"seanbreckenridge/chomp","https://github.com/seanbreckenridge/chomp","","2021-01-07T04:11:13Z"
-"seanbreckenridge/projects","https://github.com/seanbreckenridge/projects","MIT License","2021-01-07T01:57:09Z"
-"seanbreckenridge/newest","https://github.com/seanbreckenridge/newest","","2021-01-07T01:35:20Z"
+python3 -m list_gh_contributions --github_token ./token.txt --to-csv > repos.csv
+```
+
+...
+
+```csv
+"name","updatedAt","url"
+"list_gh_contributions","2021-01-17T04:57:34Z","https://github.com/seanbreckenridge/list_gh_contributions"
+"mal-id-cache","2021-01-17T02:56:59Z","https://github.com/seanbreckenridge/mal-id-cache"
+"chomp","2021-01-17T02:22:05Z","https://github.com/seanbreckenridge/chomp"
+"newest","2021-01-17T02:21:56Z","https://github.com/seanbreckenridge/newest"
+"exobrain","2021-01-15T10:42:04Z","https://github.com/seanbreckenridge/exobrain"
+"HPI","2021-01-15T10:41:56Z","https://github.com/seanbreckenridge/HPI"
+"mint","2021-01-14T23:21:27Z","https://github.com/seanbreckenridge/mint"
+"dotfiles","2021-01-12T03:43:22Z","https://github.com/seanbreckenridge/dotfiles"
+"plaintext-playlist","2021-01-07T07:41:29Z","https://github.com/seanbreckenridge/plaintext-playlist"
 ```
