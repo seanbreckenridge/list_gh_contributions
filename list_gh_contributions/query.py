@@ -17,6 +17,13 @@ def query_contributed_to() -> gql:
         licenseInfo {
             name
         }
+        description
+        stargazers {
+          totalCount
+        }
+        primaryLanguage {
+          name
+        }
         url
         updatedAt
       }
@@ -41,12 +48,19 @@ def query_owned() -> gql:
       orderBy: { field: UPDATED_AT, direction: DESC }
     ) {
       nodes {
-        updatedAt
         name
         licenseInfo {
             name
         }
+        description
+        stargazers {
+          totalCount
+        }
+        primaryLanguage {
+          name
+        }
         url
+        updatedAt
       }
       pageInfo {
         endCursor
