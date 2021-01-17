@@ -20,7 +20,6 @@ The only scopes this requires is `repo`
 
 Put the generated token in a text file on the first line
 
-
 Usage:
 
 ```

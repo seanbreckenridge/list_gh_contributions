@@ -31,9 +31,9 @@ def main(github_token: str, to_csv: bool) -> None:
 
     printer = csv_printer if to_csv else json_printer
 
-    owned_repos: JsonList = query_results(client=client, gh_query=query_owned())
+    owned_repos: JsonList = query_results(client=client, gh_query=query_owned)
     contributed_repos: JsonList = query_results(
-        client=client, gh_query=query_contributed_to()
+        client=client, gh_query=query_contributed_to
     )
 
     printer(list(chain(owned_repos, contributed_repos)))

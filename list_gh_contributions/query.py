@@ -6,9 +6,8 @@ which lets Graphql paginate
 from gql import gql  # type: ignore[import]
 
 
-def query_contributed_to() -> gql:
-    return gql(
-        r"""query ($after: String) {
+query_contributed_to: gql = gql(
+    r"""query ($after: String) {
   viewer {
     repositoriesContributedTo(first: 100, after: $after, contributionTypes: [COMMIT, ISSUE, PULL_REQUEST, REPOSITORY]) {
       totalCount
@@ -35,12 +34,11 @@ def query_contributed_to() -> gql:
   }
 }
 """
-    )
+)
 
 
-def query_owned() -> gql:
-    return gql(
-        r"""query ($after: String) {
+query_owned: gql = gql(
+    r"""query ($after: String) {
  viewer {
     repositories(
       first: 100,
@@ -69,4 +67,4 @@ def query_owned() -> gql:
     }
   }
 }"""
-    )
+)
