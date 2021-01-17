@@ -8,7 +8,7 @@ Requires `python3.6+`
 
 To install with pip, run:
 
-    pip install git+https://github.com/seanbreckenridge/list_gh_contributions
+`pip install 'git+https://github.com/seanbreckenridge/list_gh_contributions'`
 
 ---
 
