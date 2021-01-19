@@ -15,7 +15,7 @@ def construct_client(
         url=GITHUB_GRAPHQL_ENDPOINT,
         verify=True,
         retries=3,
-        headers={"Authorization": github_token},
+        headers={"Authorization": "token {}".format(github_token)},
     )
     client = Client(transport=transport, fetch_schema_from_transport=True)
     return client
