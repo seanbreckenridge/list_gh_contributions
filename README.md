@@ -57,4 +57,4 @@ python3 -m list_gh_contributions --github_token ./token.txt --to-csv > repos.csv
 "plaintext-playlist","2021-01-07T07:41:29Z","https://github.com/seanbreckenridge/plaintext-playlist"
 ```
 
-Note: You probably shouldn't have to use `--fetch-schema`, but if you get a 'null graphql' error, try that and see if it fixes the issue for you. See #3.
+Note: You probably shouldn't have to use `--fetch-schema`, but if you get a 'null graphql' error, try that and see if it fixes the issue for you. See [#3](https://github.com/seanbreckenridge/list_gh_contributions/issues/3)
