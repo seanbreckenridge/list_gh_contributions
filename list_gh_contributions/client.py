@@ -9,7 +9,9 @@ GITHUB_GRAPHQL_ENDPOINT = "https://api.github.com/graphql"
 
 
 def construct_client(
-    github_token: str, endpoint_url: str = GITHUB_GRAPHQL_ENDPOINT
+    github_token: str,
+    endpoint_url: str = GITHUB_GRAPHQL_ENDPOINT,
+    fetch_schema_from_transport: bool = False,
 ) -> Client:
     transport = RequestsHTTPTransport(
         url=GITHUB_GRAPHQL_ENDPOINT,
@@ -17,7 +19,9 @@ def construct_client(
         retries=3,
         headers={"Authorization": "token {}".format(github_token)},
     )
-    client = Client(transport=transport, fetch_schema_from_transport=True)
+    client = Client(
+        transport=transport, fetch_schema_from_transport=fetch_schema_from_transport
+    )
     return client
 
 
