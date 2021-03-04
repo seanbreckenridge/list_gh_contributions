@@ -29,6 +29,9 @@ Usage: list_gh_contributions [OPTIONS]
 
 Options:
   --github-token PATH  Text file which contains your Github token  [required]
+  --fetch-schema       indicate if we want to fetch the schema from the
+                       transport using an introspection query
+
   --to-csv             Convert output to CSV instead
   --help               Show this message and exit.
 ```
@@ -53,3 +56,5 @@ python3 -m list_gh_contributions --github_token ./token.txt --to-csv > repos.csv
 "dotfiles","2021-01-12T03:43:22Z","https://github.com/seanbreckenridge/dotfiles"
 "plaintext-playlist","2021-01-07T07:41:29Z","https://github.com/seanbreckenridge/plaintext-playlist"
 ```
+
+Note: You probably shouldn't have to use `--fetch-schema`, but if you get a 'null graphql' error, try that and see if it fixes the issue for you. See #3.

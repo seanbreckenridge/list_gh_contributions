@@ -53,4 +53,4 @@ def query_results(client: Client, gh_query: gql) -> JsonList:
 
 
 if __name__ == "__main__":
-    main()
+    main(prog_name="list_gh_contributions")
